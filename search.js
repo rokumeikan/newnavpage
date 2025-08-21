@@ -1,14 +1,18 @@
 // DOM 元素
-const showBookmarksBtn = document.getElementById('show-bookmarks-btn');
-const bookmarksContainer = document.getElementById('bookmarks-container');
+const searchPage = document.getElementById('search-page');
 const background = document.getElementById('background');
 const gotoBookmarksPageBtn = document.getElementById('goto-bookmarks-page');
 const changeBgBtn = document.getElementById('change-bg-btn');
+const showBookmarksBtn = document.getElementById('show-bookmarks-btn');
+const bookmarksContainer = document.getElementById('bookmarks-container');
 const searchEngineBtns = document.querySelectorAll('.search-engine-btn');
 
 // 切换到收藏页面
 function goToBookmarksPage() {
-    window.location.href = 'bookmarks.html';
+    searchPage.classList.add('opacity-0');
+    setTimeout(() => {
+        window.location.href = 'bookmarks.html';
+    }, 300);
 }
 
 // 显示/隐藏收藏卡片
@@ -65,10 +69,9 @@ function setupSearchEngineToggle() {
 }
 
 // 事件监听
-showBookmarksBtn.addEventListener('click', toggleBookmarks);
 gotoBookmarksPageBtn.addEventListener('click', goToBookmarksPage);
 changeBgBtn.addEventListener('click', () => changeBackground(background));
+showBookmarksBtn.addEventListener('click', toggleBookmarks);
 
 // 初始化
 setupSearchEngineToggle();
-    

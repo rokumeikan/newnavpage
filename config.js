@@ -24,7 +24,7 @@ const bookmarks = [
     { name: 'Stack Overflow', url: 'https://www.stackoverflow.com', icon: 'fa-stack-overflow', color: '#F48024', category: '工具类' },
 ];
 
-// 共用的更换背景图片函数
+// 更换背景图片的通用函数
 function changeBackground(backgroundElement) {
     currentBgIndex = (currentBgIndex + 1) % backgroundImages.length;
     const newBg = backgroundImages[currentBgIndex];
@@ -37,7 +37,10 @@ function changeBackground(backgroundElement) {
         backgroundElement.style.backgroundImage = `url('${newBg}')`;
         
         // 淡入新背景
-        backgroundElement.style.opacity = backgroundElement.id === 'background' ? '0.2' : '0.1';
+        if (backgroundElement.id === 'background') {
+            backgroundElement.style.opacity = '0.2';
+        } else {
+            backgroundElement.style.opacity = '0.1';
+        }
     }, 1000);
 }
-    
