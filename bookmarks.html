@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac风格收藏页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-secondary min-h-screen font-sans transition-colors duration-300">
+    <!-- 收藏页面 -->
+    <div id="bookmarks-page" class="min-h-screen flex flex-col p-4 transition-opacity duration-300">
+        <!-- 背景图 -->
+        <div id="bookmarks-background" class="fixed inset-0 z-0 bg-cover bg-center opacity-10 transition-opacity duration-1000" style="background-image: url('https://picsum.photos/id/1019/1920/1080');"></div>
+        
+        <!-- 顶部导航 -->
+        <header class="w-full flex justify-between items-center py-4 px-6 z-10">
+            <h1 class="text-2xl font-semibold text-gray-800">我的收藏</h1>
+            <button id="back-to-search" class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                <i class="fa fa-arrow-left text-gray-700"></i>
+            </button>
+        </header>
+        
+        <!-- 收藏内容区 -->
+        <main class="flex-1 w-full max-w-6xl mx-auto z-10">
+            <!-- 社交媒体分类 -->
+            <section class="mb-10">
+                <h2 class="text-xl font-medium mb-4 text-gray-700 flex items-center">
+                    <i class="fa fa-users mr-2 text-primary"></i>社交媒体
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <!-- 社交媒体卡片 -->
+                    <a href="https://www.facebook.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#1877F2] flex items-center justify-center mb-3">
+                            <i class="fa fa-facebook text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Facebook</h3>
+                        <p class="text-xs text-gray-500 mt-1">社交网络</p>
+                    </a>
+                    
+                    <a href="https://www.twitter.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#1DA1F2] flex items-center justify-center mb-3">
+                            <i class="fa fa-twitter text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Twitter</h3>
+                        <p class="text-xs text-gray-500 mt-1">微型博客</p>
+                    </a>
+                    
+                    <a href="https://www.instagram.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-[#405DE6] to-[#E1306C] flex items-center justify-center mb-3">
+                            <i class="fa fa-instagram text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Instagram</h3>
+                        <p class="text-xs text-gray-500 mt-1">图片分享</p>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#0A66C2] flex items-center justify-center mb-3">
+                            <i class="fa fa-linkedin text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">LinkedIn</h3>
+                        <p class="text-xs text-gray-500 mt-1">职业社交</p>
+                    </a>
+                    
+                    <a href="https://www.reddit.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#FF4500] flex items-center justify-center mb-3">
+                            <i class="fa fa-reddit text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Reddit</h3>
+                        <p class="text-xs text-gray-500 mt-1">内容聚合</p>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 工具类分类 -->
+            <section class="mb-10">
+                <h2 class="text-xl font-medium mb-4 text-gray-700 flex items-center">
+                    <i class="fa fa-wrench mr-2 text-primary"></i>工具类
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <!-- 工具类卡片 -->
+                    <a href="https://www.github.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#24292e] flex items-center justify-center mb-3">
+                            <i class="fa fa-github text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">GitHub</h3>
+                        <p class="text-xs text-gray-500 mt-1">代码托管</p>
+                    </a>
+                    
+                    <a href="https://www.stackoverflow.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#F48024] flex items-center justify-center mb-3">
+                            <i class="fa fa-stack-overflow text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Stack Overflow</h3>
+                        <p class="text-xs text-gray-500 mt-1">技术问答</p>
+                    </a>
+                    
+                    <a href="https://www.canva.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#00C4CC] flex items-center justify-center mb-3">
+                            <i class="fa fa-paint-brush text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Canva</h3>
+                        <p class="text-xs text-gray-500 mt-1">设计工具</p>
+                    </a>
+                    
+                    <a href="https://www.notion.so" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#2563EB] flex items-center justify-center mb-3">
+                            <i class="fa fa-sticky-note text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Notion</h3>
+                        <p class="text-xs text-gray-500 mt-1">笔记工具</p>
+                    </a>
+                    
+                    <a href="https://www.figma.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#F24E1E] flex items-center justify-center mb-3">
+                            <i class="fa fa-pencil text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Figma</h3>
+                        <p class="text-xs text-gray-500 mt-1">设计协作</p>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 娱乐类分类 -->
+            <section class="mb-10">
+                <h2 class="text-xl font-medium mb-4 text-gray-700 flex items-center">
+                    <i class="fa fa-gamepad mr-2 text-primary"></i>娱乐类
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <!-- 娱乐类卡片 -->
+                    <a href="https://www.youtube.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#FF0000] flex items-center justify-center mb-3">
+                            <i class="fa fa-youtube-play text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">YouTube</h3>
+                        <p class="text-xs text-gray-500 mt-1">视频平台</p>
+                    </a>
+                    
+                    <a href="https://www.netflix.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#E50914] flex items-center justify-center mb-3">
+                            <i class="fa fa-film text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Netflix</h3>
+                        <p class="text-xs text-gray-500 mt-1">流媒体</p>
+                    </a>
+                    
+                    <a href="https://www.spotify.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#1DB954] flex items-center justify-center mb-3">
+                            <i class="fa fa-spotify text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Spotify</h3>
+                        <p class="text-xs text-gray-500 mt-1">音乐平台</p>
+                    </a>
+                    
+                    <a href="https://www.twitch.tv" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#9146FF] flex items-center justify-center mb-3">
+                            <i class="fa fa-play-circle text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Twitch</h3>
+                        <p class="text-xs text-gray-500 mt-1">游戏直播</p>
+                    </a>
+                    
+                    <a href="https://www.steam.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#171A21] flex items-center justify-center mb-3">
+                            <i class="fa fa-gamepad text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Steam</h3>
+                        <p class="text-xs text-gray-500 mt-1">游戏平台</p>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- 学习类分类 -->
+            <section class="mb-16">
+                <h2 class="text-xl font-medium mb-4 text-gray-700 flex items-center">
+                    <i class="fa fa-graduation-cap mr-2 text-primary"></i>学习类
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                    <!-- 学习类卡片 -->
+                    <a href="https://www.coursera.org" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#0056D2] flex items-center justify-center mb-3">
+                            <i class="fa fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Coursera</h3>
+                        <p class="text-xs text-gray-500 mt-1">在线课程</p>
+                    </a>
+                    
+                    <a href="https://www.edx.org" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#022F5D] flex items-center justify-center mb-3">
+                            <i class="fa fa-book text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">edX</h3>
+                        <p class="text-xs text-gray-500 mt-1">开放课程</p>
+                    </a>
+                    
+                    <a href="https://www.wikipedia.org" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#FFFFFF] border border-gray-300 flex items-center justify-center mb-3">
+                            <i class="fa fa-wikipedia-w text-[#000000] text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Wikipedia</h3>
+                        <p class="text-xs text-gray-500 mt-1">百科全书</p>
+                    </a>
+                    
+                    <a href="https://www.khanacademy.org" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#13B884] flex items-center justify-center mb-3">
+                            <i class="fa fa-graduation-cap text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Khan Academy</h3>
+                        <p class="text-xs text-gray-500 mt-1">免费教育</p>
+                    </a>
+                    
+                    <a href="https://www.udemy.com" target="_blank" class="bg-white rounded-xl shadow-card p-4 flex flex-col items-center text-center card-hover">
+                        <div class="w-12 h-12 rounded-full bg-[#EC5252] flex items-center justify-center mb-3">
+                            <i class="fa fa-play-circle text-white text-xl"></i>
+                        </div>
+                        <h3 class="font-medium text-gray-800">Udemy</h3>
+                        <p class="text-xs text-gray-500 mt-1">在线课程</p>
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <!-- 底部Dock栏 -->
+        <div class="w-full max-w-5xl mb-4 z-10">
+            <div class="mx-auto w-[45%] md:w-[60%] lg:w-[45%] bg-dock-bg backdrop-blur rounded-full py-3 px-6 flex justify-around items-center shadow-md">
+                <button id="back-from-bookmarks" class="dock-icon flex flex-col items-center group" title="返回">
+                    <div class="w-10 h-10 rounded-full bg-[#6B7280] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-arrow-left text-white"></i>
+                    </div>
+                </button>
+                
+                <a href="https://www.google.com" target="_blank" class="dock-icon flex flex-col items-center group" title="Google">
+                    <div class="w-10 h-10 rounded-full bg-[#4285F4] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-google text-white"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.github.com" target="_blank" class="dock-icon flex flex-col items-center group" title="GitHub">
+                    <div class="w-10 h-10 rounded-full bg-[#24292e] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-github text-white"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.youtube.com" target="_blank" class="dock-icon flex flex-col items-center group" title="YouTube">
+                    <div class="w-10 h-10 rounded-full bg-[#FF0000] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-youtube-play text-white"></i>
+                    </div>
+                </a>
+                
+                <button id="change-bg-btn-bookmarks" class="dock-icon flex flex-col items-center group" title="更换背景">
+                    <div class="w-10 h-10 rounded-full bg-[#6B7280] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-image text-white"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="bookmarks.js"></script>
+</body>
+</html>
+    
