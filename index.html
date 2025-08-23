@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac风格搜索页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="tailwind.config.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-secondary min-h-screen font-sans transition-colors duration-300">
+    <!-- 搜索页面 -->
+    <div id="search-page" class="min-h-screen flex flex-col items-center justify-between p-4 transition-opacity duration-300">
+        <!-- 背景图（动态更换） -->
+        <div id="background" class="fixed inset-0 z-0 bg-cover bg-center opacity-20 transition-opacity duration-1000" style="background-image: url('https://picsum.photos/id/1015/1920/1080');"></div>
+        
+        <!-- 主要内容区 -->
+        <div class="w-full max-w-4xl flex flex-col items-center z-10 my-8">
+            <!-- Logo -->
+            <div class="mb-6 flex justify-center">
+                <img src="https://picsum.photos/id/1/200/80" alt="搜索页面Logo" class="rounded-lg shadow-md">
+            </div>
+            
+            <!-- 搜索引擎选择 -->
+            <div class="flex flex-wrap justify-center gap-2 mb-6 w-full">
+                <button class="search-engine-btn active px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                    <i class="fa fa-google"></i> Google
+                </button>
+                <button class="search-engine-btn px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                    <i class="fa fa-bing"></i> Bing
+                </button>
+                <button class="search-engine-btn px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                    <i class="fa fa-yahoo"></i> Yahoo
+                </button>
+                <button class="search-engine-btn px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                    <i class="fa fa-duckduckgo"></i> DuckDuckGo
+                </button>
+                <button class="search-engine-btn px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2">
+                    <i class="fa fa-youtube-play"></i> YouTube
+                </button>
+            </div>
+            
+            <!-- 搜索框 -->
+            <div class="w-full max-w-2xl mb-8">
+                <div class="relative">
+                    <input type="text" placeholder="输入搜索内容..." class="w-full py-3 px-5 pr-12 rounded-full border border-gray-200 shadow-mac focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300 bg-white/80 backdrop-blur">
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-primary">
+                        <i class="fa fa-search text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 收藏卡片展示区域 -->
+            <div id="bookmarks-container" class="w-full max-w-4xl min-h-[200px] mb-8 opacity-0 transition-opacity duration-300">
+                <!-- 收藏卡片会通过JS动态添加到这里 -->
+            </div>
+        </div>
+        
+        <!-- Dock栏 -->
+        <div class="w-full max-w-5xl mb-4 z-10">
+            <div class="mx-auto w-[45%] md:w-[60%] lg:w-[45%] bg-dock-bg backdrop-blur rounded-full py-3 px-6 flex justify-around items-center shadow-md">
+                <!-- 网站图标 -->
+                <a href="https://www.apple.com" target="_blank" class="dock-icon flex flex-col items-center group" title="Apple">
+                    <div class="w-10 h-10 rounded-full bg-[#A2AAAD] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-apple text-white text-xl"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.google.com" target="_blank" class="dock-icon flex flex-col items-center group" title="Google">
+                    <div class="w-10 h-10 rounded-full bg-[#4285F4] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-google text-white"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.github.com" target="_blank" class="dock-icon flex flex-col items-center group" title="GitHub">
+                    <div class="w-10 h-10 rounded-full bg-[#24292e] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-github text-white"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.youtube.com" target="_blank" class="dock-icon flex flex-col items-center group" title="YouTube">
+                    <div class="w-10 h-10 rounded-full bg-[#FF0000] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-youtube-play text-white"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.twitter.com" target="_blank" class="dock-icon flex flex-col items-center group" title="Twitter">
+                    <div class="w-10 h-10 rounded-full bg-[#1DA1F2] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-twitter text-white"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.netflix.com" target="_blank" class="dock-icon flex flex-col items-center group" title="Netflix">
+                    <div class="w-10 h-10 rounded-full bg-[#E50914] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-film text-white"></i>
+                    </div>
+                </a>
+                
+                <!-- 功能按钮 -->
+                <button id="change-bg-btn" class="dock-icon flex flex-col items-center group" title="更换背景">
+                    <div class="w-10 h-10 rounded-full bg-[#6B7280] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-image text-white"></i>
+                    </div>
+                </button>
+                
+                <button id="show-bookmarks-btn" class="dock-icon flex flex-col items-center group" title="显示收藏">
+                    <div class="w-10 h-10 rounded-full bg-[#0071e3] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-star text-white"></i>
+                    </div>
+                </button>
+                
+                <button id="goto-bookmarks-page" class="dock-icon flex flex-col items-center group" title="收藏页面">
+                    <div class="w-10 h-10 rounded-full bg-[#34D399] flex items-center justify-center mb-1 group-hover:shadow-lg">
+                        <i class="fa fa-bookmark text-white"></i>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
