@@ -9,7 +9,7 @@ const changeBgBtnBookmarks = document.getElementById('change-bg-btn-bookmarks');
 function goToSearchPage() {
     bookmarksPage.classList.add('opacity-0');
     setTimeout(() => {
-        window.location.href = 'index.html';
+        window.location.href = '/';
     }, 300);
 }
 
